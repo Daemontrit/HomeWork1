@@ -61,55 +61,67 @@ public class Kotik {
         eat(60, "Wiskas");
     }
 
-    public void play() {
+    public Boolean play() {
         if (eat_balance <= 0) {
             System.out.println("нужна еда");
+            return false;
 
         } else {
             eat_balance -= 10;
             System.out.println("я сделал play");
+            return true;
         }
     }
 
-    public void sleep() {
+    public Boolean sleep() {
         if (eat_balance <= 0) {
             System.out.println("нужна еда");
+            return false;
         } else {
             eat_balance -= 5;
             System.out.println("я сделал sleep");
+            return true;
 
         }
     }
 
-    public void chaseMouse() {
+    public Boolean chaseMouse() {
         if (eat_balance <= 0) {
             System.out.println("нужна еда");
+            return false;
         } else {
             eat_balance -= 25;
             System.out.println("я сделал chaseMouse");
+            return true;
         }
     }
 
-    public void tigitig() {
+    public Boolean tigitig() {
         if (eat_balance <= 0) {
             System.out.println("нужна еда");
+            return false;
         } else {
             eat_balance -= 20;
             System.out.println("я сделал tigitig");
+            return true;
         }
+
     }
 
-    public void jump() {
+    public Boolean jump() {
         if (eat_balance <= 0) {
             System.out.println("нужна еда");
+            return false;
         } else {
             eat_balance -= 15;
             System.out.println("я сделал jump");
+            return true;
         }
     }
 
     public void liveAnotherDay() {
-        for (int i = 0; i <= 24; i++) {
+        for (int i = 0; i < 24; i++) {
+            System.out.println("итерация:"+i);
             int x = getRandomDiceNumber();
             switch (x) {
                 case 1:play();
@@ -130,11 +142,12 @@ public class Kotik {
 
     public void iAmHungry(){
         if(eat_balance<=0){
+            System.out.println("нужна еда");
             eat();
         }
     }
 
-    public static int getRandomDiceNumber() {
+    public int getRandomDiceNumber() {
         return (int) (Math.random() * 5);
     }
 
