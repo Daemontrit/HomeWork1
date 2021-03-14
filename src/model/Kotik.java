@@ -132,7 +132,7 @@ public class Kotik {
                     break;
                 case 4:tigitig();
                     break;
-                case 5:tigitig();
+                case 5:jump();
                     break;
 
             }
@@ -142,13 +142,13 @@ public class Kotik {
 
     public void iAmHungry(){
         if(eat_balance<=0){
-            System.out.println("нужна еда");
+            System.out.println("нужно покушать");
             eat();
         }
     }
 
     public int getRandomDiceNumber() {
-        return (int) (Math.random() * 5);
+        return (int) (Math.random() * 5)+1;
     }
 
 }
