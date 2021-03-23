@@ -20,6 +20,9 @@ public class Kotik {
         this.meow = meow;
         count++;
     }
+    public static int getCount(){
+        return count;
+    }
 
     public void setKotik(int prettiness, String name, int weigth, String meow) {
         this.prettiness = prettiness;
